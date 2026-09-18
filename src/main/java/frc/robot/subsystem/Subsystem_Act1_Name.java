@@ -13,7 +13,11 @@ public class Subsystem_Act1_Name extends SubsystemBase {
 
   public Subsystem_Act1_Name() {}
 
-  Command ShowName = Commands.runOnce(() -> System.out.println("Ervey"));
+  Command NE = Commands.runOnce(() -> System.out.println("Ervey"));
+
+  public Command Name_Ervey() {
+    return runOnce(() -> System.out.println("Ervey"));
+  }
 
   @Override
   public void periodic() {

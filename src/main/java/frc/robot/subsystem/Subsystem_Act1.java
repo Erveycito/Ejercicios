@@ -14,23 +14,25 @@ public class Subsystem_Act1 extends SubsystemBase {
   public Subsystem_Act1() {}
 
   // Other ways to create commands
-  Command PressButton_1_Option2 = Commands.runOnce(() -> System.out.println("Button Y was pressed"));
-  Command PressButton_2_Option2 = Commands.runOnce(() -> System.out.println("Button B was pressed"));
-  Command PressButton_3_Option2 = Commands.runOnce(() -> System.out.println("Button A was pressed"));
+  Command PB1_Option2 = Commands.runOnce(() -> System.out.println("Button Y was pressed"));
+  Command PB2_Option2 = Commands.runOnce(() -> System.out.println("Button B was pressed"));
+  Command PB3_Option2 = Commands.runOnce(() -> System.out.println("Button A was pressed"));
 
 
-  // Real Commands
-  public Command PressButton_1() {
+
+  // Commands
+  public Command PressButton_Y() {
     return runOnce(() -> System.out.print("Button Y was pressed"));
   }
 
-  public Command PressButton_2() {
+  public Command PressButton_B() {
     return runOnce(() -> System.out.println("Button B was pressed"));
   }
 
-  public Command PressButton_3() {
+  public Command PressButton_A() {
     return runOnce(() -> System.out.println("Button A was pressed"));
   }
+
 
   @Override
   public void periodic() {

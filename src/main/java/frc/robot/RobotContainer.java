@@ -6,13 +6,35 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.subsystem.Subsystem_Act1;
+import frc.robot.subsystem.Subsystem_Act1_Name;
 
 public class RobotContainer {
+
+  // Variables
+  CommandXboxController CommandController = new CommandXboxController(0);
+  private final Subsystem_Act1 Sub_Buttons = new Subsystem_Act1();
+  private final Subsystem_Act1_Name Sub_Names = new Subsystem_Act1_Name();
+  
+
   public RobotContainer() {
     configureBindings();
   }
 
-  private void configureBindings() {}
+  // EVENTOS
+  private void configureBindings() {
+
+    CommandController.y()
+    .onTrue(Sub_Buttons.PressButton_Y());
+
+    CommandController.b()
+    .onTrue(Sub_Names.Name_Ervey());
+
+    CommandController.a()
+    .onTrue(Sub_Buttons.PressButton_A().alongWith(Sub_Names.Name_Ervey()));
+
+  }
 
   public Command getAutonomousCommand() {
     return Commands.print("No autonomous command configured");
