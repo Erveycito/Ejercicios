@@ -34,6 +34,11 @@ public class RobotContainer {
     CommandController.a()
     .onTrue(Sub_Buttons.PressButton_A().alongWith(Sub_Names.Name_Ervey()));
 
+
+
+    CommandController.x()
+    .onTrue(Sub_Buttons.AddToCounter_Button().alongWith(Sub_Buttons.PrintName_Counter()));
+
   }
 
   public Command getAutonomousCommand() {

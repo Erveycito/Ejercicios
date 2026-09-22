@@ -34,6 +34,19 @@ public class Subsystem_Act1 extends SubsystemBase {
   }
 
 
+
+  int CounterValue = 0;
+
+  public Command PrintName_Counter() {
+    return runOnce(() -> {
+      System.out.println("Ervey");
+  }).until(() -> CounterValue >= 10);
+  }
+
+  public Command AddToCounter_Button() {
+    return runOnce(() -> CounterValue += 1);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
