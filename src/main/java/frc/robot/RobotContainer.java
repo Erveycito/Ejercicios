@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.Command_Act1_P3;
 import frc.robot.subsystem.Subsystem_Act1;
 import frc.robot.subsystem.Subsystem_Act1_Name;
 
@@ -16,7 +17,7 @@ public class RobotContainer {
   CommandXboxController CommandController = new CommandXboxController(0);
   private final Subsystem_Act1 Sub_Buttons = new Subsystem_Act1();
   private final Subsystem_Act1_Name Sub_Names = new Subsystem_Act1_Name();
-  
+
 
   public RobotContainer() {
     configureBindings();
@@ -38,6 +39,11 @@ public class RobotContainer {
 
     CommandController.x()
     .onTrue(Sub_Buttons.AddToCounter_Button().alongWith(Sub_Buttons.PrintName_Counter()));
+
+
+    
+    CommandController.x()
+    .whileTrue(new Command_Act1_P3());
 
   }
 
