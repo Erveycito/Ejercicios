@@ -26,22 +26,42 @@ public class RobotContainer {
   // EVENTOS
   private void configureBindings() {
 
-    CommandController.y()
+    /* CommandController.y()
     .onTrue(Sub_Buttons.PressButton_Y());
 
     CommandController.b()
     .onTrue(Sub_Names.Name_Ervey());
 
     CommandController.a()
-    .onTrue(Sub_Buttons.PressButton_A().alongWith(Sub_Names.Name_Ervey()));
+    .onTrue(Sub_Buttons.PressButton_A().alongWith(Sub_Names.Name_Ervey())); */
+
+    CommandController.y()
+    .onTrue(Sub_Buttons.PressButton_Y(true));
+
+    CommandController.y()
+    .onFalse(Sub_Buttons.UnPressButton_Y(false));
 
 
+
+    CommandController.b()
+    .onTrue(Sub_Buttons.PressButton_Y(true));
+
+    CommandController.b()
+    .onFalse(Sub_Buttons.UnPressButton_Y(false));
+
+
+
+    CommandController.a()
+    .onTrue(Sub_Buttons.PressButton_Y(true));
+
+    CommandController.a()
+    .onFalse(Sub_Buttons.UnPressButton_Y(false));
+
+    // Counter command
 
     CommandController.x()
-    .onTrue(Sub_Buttons.AddToCounter_Button().alongWith(Sub_Buttons.PrintName_Counter()));
+    .onTrue(Sub_Buttons.AddToCounter_Button());
 
-
-    
     CommandController.x()
     .whileTrue(new Command_Act1_P3());
 

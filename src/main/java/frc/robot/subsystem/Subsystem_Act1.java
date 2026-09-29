@@ -4,6 +4,7 @@
 
 package frc.robot.subsystem;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -20,26 +21,43 @@ public class Subsystem_Act1 extends SubsystemBase {
 
 
 
-  // Commands
-  public Command PressButton_Y() {
-    return runOnce(() -> System.out.print("Button Y was pressed"));
+  // COMMANDS ----------------------------------------------------------------------------------------------------------------------------------------
+
+  // Button Y
+  public Command PressButton_Y(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button Y was pressed"), true)); // System.out.print("Button Y was pressed"));
   }
 
-  public Command PressButton_B() {
-    return runOnce(() -> System.out.println("Button B was pressed"));
+  public Command UnPressButton_Y(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button Y was unpressed"), false)); // System.out.print("Button Y was unpressed"));
   }
 
-  public Command PressButton_A() {
-    return runOnce(() -> System.out.println("Button A was pressed"));
+  // Button B
+  public Command PressButton_B(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button B was pressed"), true)); // System.out.print("Button B was pressed"));
+  }
+
+  public Command UnPressButton_B(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button B was unpressed"), false)); // System.out.print("Button B was unpressed"));
+  }
+
+  // Button A
+  public Command PressButton_A(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button A was pressed"), true)); // System.out.print("Button A was pressed"));
+  }
+
+  public Command UnPressButton_A(boolean Value) {
+    return runOnce(() -> SmartDashboard.getBoolean(("Button A was unpressed"), false)); // System.out.print("Button A was unpressed"));
   }
 
 
+  // COUNTER COMMANDS ----------------------------------------------------------------------------------------------------------------------------------------
 
   int CounterValue = 0;
 
   public Command PrintName_Counter() {
     return runOnce(() -> {
-      System.out.println("Ervey");
+      System.out.println("Ervey"); // System.out.println("Ervey"));
   }).until(() -> CounterValue >= 10);
   }
 

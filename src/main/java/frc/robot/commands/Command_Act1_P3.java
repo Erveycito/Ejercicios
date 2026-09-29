@@ -12,6 +12,7 @@ public class Command_Act1_P3 extends Command {
 
   int Counter = 0;
 
+
   public Command_Act1_P3() {
     // Use addRequirements() here to declare subsystem dependencies.
 
@@ -39,10 +40,12 @@ public class Command_Act1_P3 extends Command {
     if (Counter >= 100000) {
       System.out.println("Felicidades, llegaste a 100,000!!");
     } else {
-      System.out.println("No llegaste a 100,000");
+      System.out.println("No llegaste a 100,000, llegaste a " + Counter);
     }
 
   }
+
+
 
   // Returns true when the command should end.
   @Override
