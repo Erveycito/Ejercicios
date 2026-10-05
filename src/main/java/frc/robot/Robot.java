@@ -18,12 +18,31 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
   }
 
+  
+  double Dashboard_Number;
+  boolean DashboardNumber_Boolean;
+
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
     SmartDashboard.getBoolean("Si llegó a 100,000", true);
 
+    
+    Dashboard_Number = SmartDashboard.getNumber("El valor del número escrito", Dashboard_Number);
+
+    if (Dashboard_Number >= 150) {
+
+      DashboardNumber_Boolean = true;
+
+    } else if (Dashboard_Number <= 150) {
+
+      DashboardNumber_Boolean = false;
+
+    }
+      SmartDashboard.getBoolean("Analizar si tu número es mayor a 150", DashboardNumber_Boolean);
+
   }
+
 
   @Override
   public void disabledInit() {}
