@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.Command_Act1_P3;
 import frc.robot.subsystem.Subsystem_Act1;
-import frc.robot.subsystem.Subsystem_Act1_Name;
+//import frc.robot.subsystem.Subsystem_Act1_Name; //11
 
 public class RobotContainer {
 
   // Variables
   CommandXboxController CommandController = new CommandXboxController(0);
   private final Subsystem_Act1 Sub_Buttons = new Subsystem_Act1();
-  private final Subsystem_Act1_Name Sub_Names = new Subsystem_Act1_Name();
+  //private final Subsystem_Act1_Name Sub_Names = new Subsystem_Act1_Name(); //11
 
 
   public RobotContainer() {
@@ -26,7 +26,7 @@ public class RobotContainer {
   // EVENTOS
   private void configureBindings() {
 
-    /* CommandController.y()
+    /* CommandController.y() //11
     .onTrue(Sub_Buttons.PressButton_Y());
 
     CommandController.b()
